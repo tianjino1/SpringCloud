@@ -1,0 +1,14 @@
+spring: 
+  application: 
+    name: spring-cloud-server
+
+server: 
+  port: 2001
+
+eureka: 
+  instance: 
+    hostname: localhost
+  client: 
+    serviceUrl: 
+      defaultZone: http://zhang:123456@localhost:1001/eureka/
+

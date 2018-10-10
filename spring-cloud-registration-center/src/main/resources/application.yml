@@ -1,0 +1,36 @@
+spring: 
+  security: 
+    user: 
+      name: zhang
+      password: 123456
+  application: 
+    name: registration-center
+  profiles: 
+    active: peer2
+---
+server:
+  port: 1001
+spring:
+  profiles: peer1
+eureka:
+  instance:
+    hostname: peer1
+  client:
+    serviceUrl:
+      defaultZone: http://zhang:123456@peer2:1002/eureka/
+    #register-with-eureka: false
+    #fetch-registry: false
+
+---
+server:
+  port: 1002
+spring:
+  profiles: peer2
+eureka:
+  instance:
+    hostname: peer2
+  client:
+    serviceUrl:
+      defaultZone: http://zhang:123456@peer1:1001/eureka/
+    #register-with-eureka: false
+    #fetch-registry: false

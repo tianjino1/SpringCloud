@@ -1,0 +1,29 @@
+spring: 
+  application: 
+    name: spring-cloud-consumer-feign
+#  cloud:
+#    config:
+#      uri: http://localhost:4001/
+#      profile: default
+#      label: master
+
+server: 
+  port: 3001
+  
+eureka: 
+  instance: 
+    hostname: localhost
+  client: 
+    serviceUrl: 
+      defaultZone: http://zhang:123456@localhost:1001/eureka/
+      
+#配置swagger的api信息
+swagger: 
+  api: 
+    name: demo
+    title: Demo API
+    description: SwaggerSpringBootStarter 使用样例,一切就是这么简单
+    version: 2.0.5.RELEASE
+    contactUser: 阿信sxq
+    contactUrl: https://my.oschina.net/songxinqiang
+    contactEmail: songxinqiang@vip.qq.com
